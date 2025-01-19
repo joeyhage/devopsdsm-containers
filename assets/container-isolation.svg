@@ -1,0 +1,23 @@
+<svg viewBox="0 0 400 800" xmlns="http://www.w3.org/2000/svg">
+  <!-- Three main containers -->
+  <g transform="translate(100,180)">
+    <!-- Container 1 - Cold storage -->
+    <rect x="0" y="0" width="200" height="120" fill="#3498db" rx="10"/>
+    <text x="100" y="50" text-anchor="middle" fill="white" font-size="40">❄️</text>
+    <text x="100" y="95" text-anchor="middle" fill="white" font-size="16">Frozen Fish (28°F)</text>
+    
+    <!-- Container 2 - Tropical storage -->
+    <rect x="0" y="160" width="200" height="120" fill="#e74c3c" rx="10"/>
+    <text x="100" y="210" text-anchor="middle" fill="white" font-size="40">🌴</text>
+    <text x="100" y="255" text-anchor="middle" fill="white" font-size="16">Fresh Produce (77°F)</text>
+    
+    <!-- Container 3 - Dry storage -->
+    <rect x="0" y="320" width="200" height="120" fill="#2ecc71" rx="10"/>
+    <text x="100" y="370" text-anchor="middle" fill="white" font-size="40">📦</text>
+    <text x="100" y="415" text-anchor="middle" fill="white" font-size="16">Dry Goods (68°F)</text>
+    
+    <!-- Barrier lines to emphasize isolation -->
+    <line x1="0" y1="140" x2="200" y2="140" stroke="#fff" stroke-width="4" stroke-dasharray="10,5"/>
+    <line x1="0" y1="300" x2="200" y2="300" stroke="#fff" stroke-width="4" stroke-dasharray="10,5"/>
+  </g>
+</svg>

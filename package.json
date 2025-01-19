@@ -1,0 +1,15 @@
+{
+  "name": "slides",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "marp:export": "marp --html --pdf ./index.md -o ./deck",
+    "marp:serve": "marp --server .",
+    "prettier": "prettier --write .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "devDependencies": {
+    "@marp-team/marp-cli": "^4.1.0",
+    "prettier": "^3.4.2"
+  }
+}
