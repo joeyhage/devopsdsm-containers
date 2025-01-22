@@ -1,24 +1,40 @@
 import './style.css'
-import typescriptLogo from './typescript.svg'
-import viteLogo from '/vite.svg'
-import { setupCounter } from './counter.ts'
+
+async function checkHealth() {
+  try {
+    const response = await fetch('http://192.168.1.215:8000/health')
+    const data = await response.json()
+    return data.status === 'healthy' ? '✅' : '❌'
+  } catch {
+    return '❌'
+  }
+}
+
+async function getVisitorCount() {
+  try {
+    const response = await fetch('http://192.168.1.215:8000/counter')
+    const data = await response.json()
+    return data.count
+  } catch {
+    return '?'
+  }
+}
 
 document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
   <div>
-    <a href="https://vite.dev" target="_blank">
-      <img src="${viteLogo}" class="logo" alt="Vite logo" />
-    </a>
-    <a href="https://www.typescriptlang.org/" target="_blank">
-      <img src="${typescriptLogo}" class="logo vanilla" alt="TypeScript logo" />
-    </a>
-    <h1>Vite + TypeScript</h1>
+    <h1>Development Environment Demo</h1>
     <div class="card">
-      <button id="counter" type="button"></button>
+      <p>Backend Status: <span id="status">Checking...</span></p>
+      <p>Visitor Count: <span id="count">Loading...</span></p>
+      <button type="button" id="refresh">Refresh Status</button>
     </div>
-    <p class="read-the-docs">
-      Click on the Vite and TypeScript logos to learn more
-    </p>
   </div>
 `
 
-setupCounter(document.querySelector<HTMLButtonElement>('#counter')!)
+async function updateStatus() {
+  document.getElementById('status')!.textContent = await checkHealth()
+  document.getElementById('count')!.textContent = await getVisitorCount()
+}
+
+document.getElementById('refresh')?.addEventListener('click', updateStatus)
+updateStatus()

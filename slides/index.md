@@ -102,10 +102,9 @@ _paginate: false
 <div class="text-left text-xl">
   <p>We'll create a development environment for a typical web application:</p>
   <ul>
-    <li>Set up a Python backend using Postgres and a message queue</li>
-    <li>Set up a Vue frontend</li>
     <li>Configure VS Code Dev Container using Docker Compose</li>
-    <li>Show how to handle multiple projects</li>
+    <li>Set up a Python backend using Postgres and a message queue</li>
+    <li>Set up a Vite frontend</li>
   </ul>
 </div>
 
