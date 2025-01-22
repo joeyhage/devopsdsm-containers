@@ -1,8 +1,10 @@
 import './style.css'
 
+console.log(import.meta.env.MODE)
+
 async function checkHealth() {
   try {
-    const response = await fetch('http://192.168.1.215:8000/health')
+    const response = await fetch(`${import.meta.env.VITE_API_HOST}/health`)
     const data = await response.json()
     return data.status === 'healthy' ? '✅' : '❌'
   } catch {
@@ -12,7 +14,7 @@ async function checkHealth() {
 
 async function getVisitorCount() {
   try {
-    const response = await fetch('http://192.168.1.215:8000/counter')
+    const response = await fetch(`${import.meta.env.VITE_API_HOST}/counter`)
     const data = await response.json()
     return data.count
   } catch {

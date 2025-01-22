@@ -103,7 +103,7 @@ _paginate: false
   <p>We'll create a development environment for a typical web application:</p>
   <ul>
     <li>Configure VS Code Dev Container using Docker Compose</li>
-    <li>Set up a Python backend using Postgres and a message queue</li>
+    <li>Set up a Python backend using Postgres and Redis</li>
     <li>Set up a Vite frontend</li>
   </ul>
 </div>
@@ -116,7 +116,7 @@ _paginate: false
 
 <div class="text-left text-xl">
   <ul>
-    <li>Document any required environment variables</li>
+    <li>Document any required environment variables and/or create VS Code launch configurations</li>
     <li>Include common development tools in your dev container</li>
     <li>Use compose for multi-container development environments</li>
   </ul>

@@ -1,3 +1,5 @@
+*.local
+
 # Node
 node_modules/
 
