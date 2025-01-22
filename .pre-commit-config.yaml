@@ -1,0 +1,52 @@
+exclude: '(CODEOWNERS$|^.vscode|^.github)'
+default_language_version:
+  python: python3.12
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v5.0.0
+    hooks:
+      - id: check-added-large-files
+      - id: check-ast
+      - id: check-case-conflict
+      - id: check-docstring-first
+      - id: check-merge-conflict
+      - id: check-toml
+      - id: end-of-file-fixer
+      - id: mixed-line-ending
+      - id: trailing-whitespace
+
+  - repo: https://github.com/astral-sh/uv-pre-commit
+    rev: 0.5.22
+    hooks:
+      - id: uv-lock
+        args: [--directory=server]
+
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    rev: v0.6.9
+    hooks:
+      - id: ruff
+        args: [--config=server/pyproject.toml, --fix]
+      - id: ruff-format
+        args: [--config=server/pyproject.toml]
+
+  - repo: https://github.com/hadialqattan/pycln
+    rev: v2.5.0
+    hooks:
+      - id: pycln
+        args: [--config=server/pyproject.toml]
+
+  - repo: local
+    hooks:
+      - id: client:npm ci
+        name: Check client lockfile
+        language: system
+        entry: sh -c 'cd client && npm ci'
+        files: ^client/package(-lock)?.json$
+        pass_filenames: false
+
+      - id: slides:npm ci
+        name: Check slides lockfile
+        language: system
+        entry: sh -c 'cd slides && npm ci'
+        files: ^slides/package(-lock)?.json$
+        pass_filenames: false

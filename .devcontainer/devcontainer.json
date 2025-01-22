@@ -26,7 +26,7 @@
 		"slides:install": "cd slides && npm install",
 	},
 
-	"postStartCommand": ""
+	"postStartCommand": "pre-commit install --install-hooks",
 
 	// Configure tool-specific properties.
 	// "customizations": {},
