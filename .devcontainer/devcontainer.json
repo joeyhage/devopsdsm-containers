@@ -21,8 +21,9 @@
 
 	// Use 'postCreateCommand' to run commands after the container is created.
 	"postCreateCommand": {
-		"slides:install": "cd slides && npm install",
+		"client:install": "cd client && npm install",
 		"server:install": "cd server && uv sync --link-mode=copy",
+		"slides:install": "cd slides && npm install",
 	},
 
 	"postStartCommand": ""

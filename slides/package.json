@@ -5,8 +5,7 @@
   "scripts": {
     "marp:export": "marp --html --pdf ./index.md -o ./deck",
     "marp:serve": "marp --server .",
-    "prettier": "prettier --write .",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "prettier": "prettier --write ."
   },
   "devDependencies": {
     "@marp-team/marp-cli": "^4.1.0",
