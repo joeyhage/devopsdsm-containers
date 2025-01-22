@@ -3,20 +3,29 @@
 {
 	"name": "Debian",
 	// Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
-	"image": "mcr.microsoft.com/devcontainers/base:bullseye",
+  "image": "mcr.microsoft.com/devcontainers/base:bullseye",
 	"features": {
 		"ghcr.io/devcontainers/features/node:1": {
 			"version": "lts",
 			"pnpmVersion": "none",
 			"nvmVersion": "latest"
 		},
+		"ghcr.io/devcontainers/features/python:1": {
+			"version": "3.12",
+			"toolsToInstall": "uv,pre-commit"
+		}
 	},
 
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
-	"forwardPorts": [8080],
+	"forwardPorts": [3000, 8000, 8080],
 
 	// Use 'postCreateCommand' to run commands after the container is created.
-	"postCreateCommand": "npm install",
+	"postCreateCommand": {
+		"slides:install": "cd slides && npm install",
+		"server:install": "cd server && uv sync --link-mode=copy",
+	},
+
+	"postStartCommand": ""
 
 	// Configure tool-specific properties.
 	// "customizations": {},
