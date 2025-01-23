@@ -12,7 +12,7 @@ _paginate: false
 
 ![bg opacity](./assets/background.svg)
 
-![h:100 saturate:1.4  drop-shadow:0,10px,16px,rgba(0,0,0,.4)](./assets/devopsdsm.jpeg)
+![h:125 saturate:1.4  drop-shadow:0,10px,16px,rgba(0,0,0,.4)](./assets/devopsdsm.jpeg)
 
 <div class="w-90">
   <h1 class="text-6xl">Containerize your development environment</h1>
@@ -109,20 +109,6 @@ _paginate: false
 </div>
 
 ![bg opacity:80%](./assets/demo-background.svg)
-
----
-
-# Best practices
-
-<div class="text-left text-xl">
-  <ul>
-    <li>Document any required environment variables and/or create VS Code launch configurations</li>
-    <li>Include common development tools in your dev container</li>
-    <li>Use compose for multi-container development environments</li>
-  </ul>
-</div>
-
-![bg opacity](./assets/background.svg)
 
 ---
 

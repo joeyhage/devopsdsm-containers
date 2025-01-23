@@ -20,7 +20,7 @@ redis_client = redis.Redis(
     decode_responses=True,
 )
 db_pool = psycopg_pool.ConnectionPool(
-    os.getenv("DB_DSN", ""), max_size=10, kwargs={"row_factory": dict_row}
+    os.environ["DB_DSN"], max_size=10, kwargs={"row_factory": dict_row}
 )
 
 

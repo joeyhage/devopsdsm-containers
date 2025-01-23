@@ -23,7 +23,8 @@
             "request": "launch",
             "name": "Server: Debug",
             "module": "main",
-            "cwd": "${workspaceFolder}/server"
+            "cwd": "${workspaceFolder}/server",
+            "envFile": "${workspaceFolder}/server/.env.development"
         },
         {
             "type": "node",
